@@ -37,7 +37,7 @@
   </head>
   <body class="bg-light">
     
-<div class="container">
+<div class="container w-50">
   <main>
     <div class="py-5 text-center">
       <h2>CADASTRO - TRANSPORTE ESCOLAR 2024</h2>
@@ -51,7 +51,7 @@
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col mb-4">
-              <label for="firstName" class="form-label ">Nome</label>
+              <label for="firstName" class="form-label" >Nome</label>
               <input type="text" class="form-control" id="nome" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Por favorm, preencha seu nome
@@ -186,8 +186,8 @@
                              </select>
                             </div>
                             
-                            <div class="col-1 align-items-end d-flex ">
-                                <a class="btn btn-success">+</a>
+                            <div class="col-3 align-items-end d-flex ">
+                                <a class="btn btn-success" id="btnNovoAluno">Adicionar Aluno</a>
                             </div>
 
                 </div>
@@ -195,14 +195,15 @@
             </form>
 
 
-            <table class="table mt-5">
-                
+            <table class="table mt-5 table-bordered ">
+                <thead>
+                    <tr>
+                      <th scope="col">Nome Aluno</th>
+                      <th scope="col">Escola</th>
+                      <th scope="col">Série</th>
+                    </tr>
+                  </thead>
                 <tbody id="tableAlunos">
-                  <tr>
-                    <td>Aluno 1</td>
-                    <td>Escola 1</td>
-                    <td>Série 1</td>
-                  </tr>
                   
                   
                 </tbody>
