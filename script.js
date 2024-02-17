@@ -77,8 +77,11 @@ function criarTagTr(aluno){
     
 }
 
+//Chamar a função getLocation automaticamente
+getLocation()
 
- btnLoc.onclick = () => getLocation()
+
+//  btnLoc.onclick = () => getLocation()
 
  btnEnviar.onclick= () => { 
 
