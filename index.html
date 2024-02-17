@@ -1,3 +1,240 @@
-<h1>Teste</h1>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Cadastro Transporte Escolar - Novo Mundo 2024</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+    
+
+    
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>CADASTRO - TRANSPORTE ESCOLAR 2024</h2>
+      <p class="lead"> Preencha seus dados para realizar seu cadastro no Transporte Escolar. </p>
+    </div>
+
+    <div class="row g-5">
+
+      <div class="col-12">
+        <h4 class="mb-3">Dados do Responsável</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col mb-4">
+              <label for="firstName" class="form-label ">Nome</label>
+              <input type="text" class="form-control" id="nome" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Por favorm, preencha seu nome
+              </div>
+            </div>
+           
+
+            <div class="col-12 mb-4">
+              <label for="address" class="form-label">Seu endereço</label>
+              <input type="text" class="form-control" id="endereco" placeholder="Fazenda ABC" required>
+              <small id="addressHelp" class="form-text text-muted">Nome da Fazenda, Sítio ou Comunidade onde você mora</small>
+              <div class="invalid-feedback">
+                Por favor, preencha o seu endereço ou local de referencia
+              </div>
+            </div>
 
 
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Linha/Rota do ônibus </label>
+              <select class="form-select" id="linha" required>
+                <option value="">Selecione...</option>
+                <option>Araúna I - Motorista Ávila</option>
+                <option>Araúna II - Motorista Cláudio</option>
+                <option>Flor da Mata - Motorista Marcélio</option>
+                <option>Guimarães - Daniel Cafú</option>
+                <option>Módulo IV - Motorista Tarcísio</option>
+                <option>Pacuri - Motorista Reinaldo</option>
+                <option>Água Azul - Motorista Azonilton</option>
+                <option>Boa Esperança - Motorista Anísio</option>
+                <option>Boca Fria - Motorista Ismael Cebinho</option>
+                <option>Dalbo Querencia - Motorista Daniel Tiba</option>
+                <option>Dalbo Tabapuã - Motorista Bruno</option>
+                <option>Paraná - Motorista Michel</option>
+                <option>Teles Pires - Motorista Antonio Bras</option>
+                <option>Nova Conquista - Motorista Ismael Cebinho</option>
+                <option>Grota do Sapo - Valdemar Baiano</option>
+                <option>Acampam. 5 Estrelas - Motorista João</option>
+                
+                <option>Não sei</option>
+              </select>
+              <div class="invalid-feedback">
+                Se tiver dúvida, selecione a opção 'Não sei'
+              </div>
+            </div>
+
+                        
+          </div>
+
+          <hr class="my-4">
+        
+
+          <h4 class="mb-3">Sua Localização</h4>
+
+          <div id="map"></div>  
+
+          <p>Clique no botão abaixo para nos enviar sua localização(longitute, latitude)</p>
+          
+        <div class="row">
+          
+            <div class="col-auto">
+              <a class="btn btn-secondary mb-3" id="btn-localizacao">Capturar Localização</a>
+            </div>
+
+          <div class="col border rounded-3 ">
+            <label for="staticEmail2" class="visually-hidden">Localização</label>
+            <input type="text" readonly class="form-control-plaintext" id="textLatLong" value="Latitude, longitude">
+          </div>
+
+          
+        </div>
+          <hr class="my-4">
+
+
+
+          <div class="col">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="">Dados dos Alunos</span>
+            </h4>
+
+            <form class=" align-items-end">
+                <div class="row">
+                    <div class="col-4">
+                        <label for="firstName" class="form-label">Nome do Aluno</label>
+                        <input type="text" class="form-control" id="InputNomeAluno" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Por favor, preencha o nome do aluno
+                        </div>
+                    </div>
+
+              <div class="col">
+              <label for="country" class="form-label">Escola </label>
+              <select class="form-select" id="InputEscola" required>
+                <option value="">Selecione...</option>
+                <option>Água Azul</option>
+                <option>Alcides Ferreira Primo</option>
+                <option>Dante Martins de Oliveira</option>
+                <option>Inovação</option>
+                <option>Nhandu</option>
+                <option>São João</option>
+                <option>Teles Pires</option>
+                                
+                <option>Não está matriculado ainda</option>
+              </select>
+                
+                </div>
+                    <div class="col">
+                        <label for="country" class="form-label">Série </label>
+                        <select class="form-select" id="InputSerie" required>
+                            <option value="">Selecione...</option>
+                            <optgroup label="Fundamental">
+                                <option>Creche</option>
+                                <option>Pre I</option>
+                                <option>Pre II</option>
+                                <option>1º Ano - Fundamental</option>
+                                <option>2º Ano - Fundamental</option>
+                                <option>3º Ano - Fundamental</option>
+                                <option>4º Ano - Fundamental</option>
+                                <option>5º Ano - Fundamental</option>
+                                <option>6º Ano - Fundamental</option>
+                                <option>7º Ano - Fundamental</option>
+                                <option>8º Ano - Fundamental</option>
+                                <option>9º Ano - Fundamental</option>
+                            </optgroup>
+                            <optgroup label="Ens. Médio">
+                                <option>1º Ano - Ens. Médio Médio</option>
+                                <option>2º Ano - Ens. Médio Médio</option>
+                                <option>3º Ano - Ens. Médio Médio</option>
+                            </optgroup>
+                                                            
+                            <option>Não sei informar</option>
+                             </select>
+                            </div>
+                            
+                            <div class="col-1 align-items-end d-flex ">
+                                <a class="btn btn-success">+</a>
+                            </div>
+
+                </div>
+
+            </form>
+
+
+            <table class="table mt-5">
+                
+                <tbody id="tableAlunos">
+                  <tr>
+                    <td>Aluno 1</td>
+                    <td>Escola 1</td>
+                    <td>Série 1</td>
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+        
+        
+          </div>
+
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" type="submit" id="btnEnviar" >Finalizar Cadastro</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="form-validation.js"></script>
+  </body>
+</html>
