@@ -122,7 +122,7 @@ function criarTagTr(aluno){
     
 }
 
-
+//DELETAR ALUNO
 function deletar(id){
     let confirmacao = window.confirm(`Tem certeza que deseja excluir o aluno?`)
     if (confirmacao){
@@ -132,7 +132,17 @@ function deletar(id){
          }
         
     }
+
+    verificaTabela()
     
+}
+
+
+function verificaTabela(){
+    let totalAlunos = tableAlunos.childElementCount
+    if(totalAlunos == 0){
+        btnEnviar.style.display = "none";
+    }
 }
 
 
