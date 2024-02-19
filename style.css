@@ -1,3 +1,8 @@
-body{
-    background-color: aquamarine;
+
+
+.btnAcao{
+    color: #f30e6b !important;
+    cursor: pointer;
+    background: blueviolet;
+
 }

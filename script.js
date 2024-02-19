@@ -21,14 +21,38 @@ getLocation()
 btnEnviar.style.display = "none";
 
 
-function obterResponsavel(){
-    let responsavel = {
-        nome: nomeResponsavel.value,
-        endereco: enderecoResponsavel.value,
-        linha: linhaResponsavel.value,
-        localizacao: localiza
+//CONVERTE EM MAIUSCULAS O TEXTO DIGITADO
+nomeResponsavel.addEventListener('input', (ev) => {
+	const input = ev.target;
+	input.value = input.value.toUpperCase();
+});
+
+enderecoResponsavel.addEventListener('input', (ev) => {
+	const input = ev.target;
+	input.value = input.value.toUpperCase();
+});
+
+inputNomeAluno.addEventListener('input', (ev) => {
+	const input = ev.target;
+	input.value = input.value.toUpperCase();
+});
+
+
+//ENTER
+nomeResponsavel.addEventListener('keypress', (e) => {
+    if(e.keyCode == 13){
+        event.preventDefault()
+       enderecoResponsavel.focus(); 
     }
-}
+})
+enderecoResponsavel.addEventListener('keypress', (e) => {
+    if(e.keyCode == 13){
+        event.preventDefault()
+        linhaResponsavel.focus(); 
+    }
+})
+
+
 
 
 // botão Novo Aluno
@@ -82,14 +106,32 @@ function addAluno(aluno){
 function criarTagTr(aluno){
     let registro = ''
     registro = `
-    <tr>
+    <tr id=${aluno.id}>
         <td>${aluno.nome}</td>
         <td>${aluno.escola}</td>
         <td>${aluno.serie}</td>
+        <td>
+            <button type="button" class="btn btn-outline-danger" onclick=deletar(${aluno.id})> 
+                <i class="fa fa-trash"> </i> 
+            </button>    
+        </td>
     </tr>
     `
     console.log(registro)
     return registro;
+    
+}
+
+
+function deletar(id){
+    let confirmacao = window.confirm(`Tem certeza que deseja excluir o aluno?`)
+    if (confirmacao){
+        let td = document.getElementById(`${id}`)
+         if(td){
+             tableAlunos.removeChild(td);
+         }
+        
+    }
     
 }
 
@@ -117,6 +159,7 @@ function criarTagTr(aluno){
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            return
           }
   
           form.classList.add('was-validated')
