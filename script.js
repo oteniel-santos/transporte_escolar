@@ -248,7 +248,7 @@ function verificaTabela(){
     navigator.geolocation.getCurrentPosition(showPosition,showError);
     }
   else{
-    return("Geolocalização não é suportada nesse browser");
+    alert("Geolocalização não é suportada nesse browser");
   }
   }
 
