@@ -1,5 +1,5 @@
  const btnLoc = document.querySelector('#btn-localizacao')
- const textLatLong = document.querySelector('#textLatLong')
+ let textLatLong = document.querySelector('#textLatLong')
  const nomeResponsavel = document.querySelector('#nome');
  const enderecoResponsavel = document.querySelector('#endereco');
  const linhaResponsavel = document.querySelector('#linha');
@@ -16,7 +16,10 @@
 
  
  //Chamar a função getLocation automaticamente
-getLocation()
+
+ window.onload = function() {
+    textLatLong.value =  getLocation()
+};
 
 btnEnviar.style.display = "none";
 
@@ -244,7 +247,9 @@ function verificaTabela(){
     {
     navigator.geolocation.getCurrentPosition(showPosition,showError);
     }
-  else{x.innerHTML="Geolocalização não é suportada nesse browser.";}
+  else{
+    return("Geolocalização não é suportada nesse browser");
+  }
   }
 
 
@@ -263,20 +268,31 @@ function showPosition(position)
 
 
 function showError(error)
+
   {
   switch(error.code)
     {
     case error.PERMISSION_DENIED:
-      x.innerHTML="Usuário rejeitou a solicitação de Geolocalização."
-      break;
+    msgerror = "Usuário rejeitou a solicitação de Geolocalização"  
+    document.querySelector('#textLatLong').value = msgerror;
+    // return("Usuário rejeitou a solicitação de Geolocalização.")
+    break;
     case error.POSITION_UNAVAILABLE:
-      x.innerHTML="Localização indisponível."
-      break;
+      msgerror = "Localização indisponível"    
+      document.querySelector('#textLatLong').value = msgerror;
+    // x.innerHTML="Localização indisponível."
+    break;
     case error.TIMEOUT:
-      x.innerHTML="O tempo da requisição expirou."
-      break;
+      msgerror = "O tempo da requisição expirou"    
+      document.querySelector('#textLatLong').value = msgerror;
+    // x.innerHTML="O tempo da requisição expirou."
+     break;
     case error.UNKNOWN_ERROR:
-      x.innerHTML="Algum erro desconhecido aconteceu."
+      msgerror = "Algum erro desconhecido aconteceu."  
+      document.querySelector('#textLatLong').value = msgerror;
+      // x.innerHTML="Algum erro desconhecido aconteceu."
       break;
     }
+
+    
   }
