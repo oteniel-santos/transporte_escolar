@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Signin Template · Bootstrap v5.1</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
-
+    <title>Cadastro Transporte Escolar - Novo Mundo 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
     
 
+    
     <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -33,35 +33,230 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="form-validation.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="bg-light">
     
-<main class="form-signin">
-  <form>
-    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+<div class="container w-100">
+  <main>
+    <div class="py-5 text-center">
+      <h2>CADASTRO - TRANSPORTE ESCOLAR 2024 - Cristalino do Norte</h2>
+      <p class="lead"> Preencha seus dados para realizar seu cadastro no Transporte Escolar. </p>
     </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-  </form>
-</main>
+    <div class="row g-5">
+
+      <div class="col-12">
+        <h4 class="mb-3">Dados do Responsável</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col mb-4">
+              <label for="firstName" class="form-label" >Nome</label>
+              <input type="text" class="form-control" id="nome" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Por favor, preencha seu nome
+              </div>
+            </div>
+           
+
+            <div class="col-12 mb-4">
+              <label for="address" class="form-label">Seu endereço</label>
+              <input type="text" class="form-control" id="endereco" placeholder="Fazenda ABC" required>
+              <small id="addressHelp" class="form-text text-muted">Nome da Fazenda, Sítio ou Comunidade onde você mora</small>
+              <div class="invalid-feedback">
+                Por favor, preencha o seu endereço ou local de referencia
+              </div>
+            </div>
 
 
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Linha/Rota do ônibus </label>
+              <select class="form-select" id="linha" required>
+                <option value="">Selecione...</option>
+                <option>Jabuti - Motorista Baixinho</option>
+                <option>Pezão - Motorista Menininho</option>
+                <option>Chicão - Motorista Geraldo</option>
+                <option>Barra Norte - Motorista Jociel</option>
+                <option>Valmor e Martins - Motorista Antonio</option>
+                <option>Bananal - Motorista Adriano</option>
+                <option>Água Azul - Motorista Azonilton</option>
+                <option>Linha dos 40 - Motorista Marcelo</option>
+                <option>Gogó da Coruja - Nilton</option>
+                <option>Vicinal 2 - Sidney</option>
+                                
+                <option>Não sei</option>
+              </select>
+              <div class="invalid-feedback">
+                Se tiver dúvida, selecione a opção 'Não sei'
+              </div>
+            </div>
+
+                        
+          </div>
+
+          <hr class="my-4">
+        
+        <!-- LOCALIZAÇÃO -->
+        <div class="card border-dark">
+            <div class="card-header">
+              Localização
+            </div>
+            <div class="card-body">
+
+                <h4 class="mb-3">Capturar as Coordenadas da Casa</h4>
+                <p>A captura deve ser feita estritamente em casa (longitute, latitude)</p>
+                <div class="row">
+                
+                  <div class="col-auto">
+                    <a class="btn btn-outline-info mb-3" id="btn-localizacao">Atualizar Coordenada da Casa</a>
+                  </div>
+      
+                <div class="col-12 border rounded-3">
+                  <label for="textLatLong" class="visually-hidden">Localização</label>
+                  <input type="text" readonly class="form-control-plaintext" id="textLatLong" value="Coordenadas da Casa">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        
+        <hr class="my-4">
+
+        <div class="row bg-info d-flex align-items-center p-4 rounded-3">
+            <div class="col">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="">Dados dos Alunos</span>
+                </h4>
+                <p>Clique no botão Adicionar Aluno para inserir os dados do aluno(s) que residem nesta casa.   </p>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Adicionar Aluno</a>
+            </div>
+        </div>
+
+        <!-- tabela alunos -->
+        <table class="table mt-5 table-bordered ">
+            <thead>
+                <tr>
+                  <th scope="col">Nome Aluno</th>
+                  <th scope="col">Escola</th>
+                  <th scope="col">Série</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+            <tbody id="tableAlunos">
+              
+              
+            </tbody>
+          </table>
+        <!-- tabela alunos -->
+
+
+
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" type="submit" id="btnEnviar" >Finalizar Cadastro</button>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Adicionar Aluno</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+<!-- INICIO DO FORM MODAL ALUNO -->
+
+<div class="col">
+
+
+    <form novalidate>
+        <div class="row">
+            <div class="col-12">
+                <label for="firstName" class="form-label">Nome do Aluno</label>
+                <input type="text" class="form-control" id="InputNomeAluno" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Por favor, preencha o nome do aluno
+                </div>
+            </div>
+
+      <div class="col-12">
+      <label for="country" class="form-label">Escola </label>
+      <select class="form-select" id="InputEscola" required>
+        <option value="">Selecione...</option>
+        <option >São João</option>
+        <option >Dante Martins</option>
+                        
+        <option >Não está matriculado ainda</option>
+      </select>
+        
+        </div>
+            <div class="col-12">
+                <label for="country" class="form-label">Série </label>
+                <select class="form-select" id="InputSerie" required>
+                    
+                </select>
+                </div>
+                    
+                    <div class="col-8 align-items-end d-flex mt-3 ">
+                        <a class="btn btn-success" id="btnNovoAluno" data-bs-dismiss="modal">Adicionar Aluno</a>
+                    </div>
+
+        </div>
+
+    </form>
+
+
+
+
+
+  </div>
+
+<!-- FIM DO FORM MODAL ALUNO -->
+
+
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+      </div> 
+    </div> 
     
+  </div>
+
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2024 - Secretaria de Educação - Novo Mundo/MT</p>
+  </footer>
+</div>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script2.js"></script>
+    <script src="form-validation.js"></script>
   </body>
 </html>

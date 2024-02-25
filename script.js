@@ -7,6 +7,7 @@
  var localiza = ""
  const InputSerie = document.querySelector('#InputSerie');
  const InputEscola = document.querySelector('#InputEscola')
+ 
 
 // Capturar variáveis do documento
  let inputNomeAluno = document.querySelector('#InputNomeAluno')
@@ -305,8 +306,9 @@ InputEscola.addEventListener('change', (e) => {
     var listaSeries = selecionaEscola(InputEscola.selectedIndex)
     criarLista(listaSeries)
 
-
 })
+
+
 
 function criarLista(listaSeries){
   InputSerie.innerHTML = ""
