@@ -5,6 +5,8 @@
  const linhaResponsavel = document.querySelector('#linha');
  const btnEnviar = document.querySelector('#btnEnviar'); 
  var localiza = ""
+ const InputSerie = document.querySelector('#InputSerie');
+ const InputEscola = document.querySelector('#InputEscola')
 
 // Capturar variáveis do documento
  let inputNomeAluno = document.querySelector('#InputNomeAluno')
@@ -78,7 +80,7 @@ btnNovoAluno.addEventListener('click', (e)=>{
         return
     }
     
-    if(!inputSerieAluno.value){
+    if(!inputSerieAluno.selectedIndex){
         alert('Informe a série do aluno')
         return
     }
@@ -296,3 +298,66 @@ function showError(error)
 
     
   }
+
+//SELECT ESCOLAS
+
+InputEscola.addEventListener('change', (e) => {
+    var listaSeries = selecionaEscola(InputEscola.selectedIndex)
+    criarLista(listaSeries)
+
+
+})
+
+function criarLista(listaSeries){
+  InputSerie.innerHTML = ""
+  let listItem = `<option>Selecione...</option> `
+  listaSeries.forEach(serie => {
+     var item =`<option>${serie}</option> `
+     listItem += item 
+  });
+  listItem += `<option>Não sei informar</option> `
+
+  InputSerie.innerHTML = listItem
+}
+
+
+
+const selecionaEscola = (idEscola) => {
+  switch (idEscola) {
+    case idEscola = 3:
+      const Inovacao = ["4º ano", "5º ano","6º ano" ]
+      return Inovacao
+      break;
+    
+      case idEscola = 2:
+      const Alcides = ["Pre II","1º ano", "2º ano","3º ano" ]
+      return Alcides
+      break;
+    
+      case idEscola = 1:
+      const Creche = ["Creche I", "Creche II","Creche III", "Creche IV", "Pre I" ]
+      return Creche
+      break;
+
+      case idEscola = 5:
+      const AndreMaggi = ["1º Ano-Ens. Médio", "2º Ano-Ens. Médio","3º Ano-Ens. Médio"]
+      return AndreMaggi
+      break;
+
+      case idEscola = 8:
+      const Vazio = [""]
+      return Vazio
+      break;
+    
+    default:
+      return Rural = ["Pre I e II","1º Ano", "2º Ano","3º Ano","4º Ano","5º Ano", "6º Ano","7º Ano","8º Ano","9º Ano"]
+      break;
+  }
+
+  
+
+
+
+
+
+}
