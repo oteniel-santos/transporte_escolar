@@ -342,7 +342,7 @@ const selecionaEscola = (idEscola) => {
       break;
 
       case idEscola = 5:
-      const AndreMaggi = ["1º Ano-Ens. Médio", "2º Ano-Ens. Médio","3º Ano-Ens. Médio"]
+      const AndreMaggi = ["7º Ano","8º Ano","9º Ano","1º Ano-Ens. Médio", "2º Ano-Ens. Médio","3º Ano-Ens. Médio"]
       return AndreMaggi
       break;
 
