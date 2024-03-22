@@ -200,7 +200,7 @@ function verificaTabela(){
 
   //ENVIAR PARA ZAP  
   function enviarParaWhatsApp(responsavel) {
-    var foneDestino = "5566992034311"
+    var foneDestino = "5566992028229"
 
     var text=encodeURIComponent(`*CADASTRO TRANSPORTE ESCOLAR-2024*
     
