@@ -1,0 +1,15 @@
+{
+    "versão": 2,
+    "compilações": [
+    {
+    "src": "index.js",
+    "usar": "@vercel/node"
+    }
+    ],
+    "rotas": [
+    {
+    "src": "/(.*)",
+    "dest": "server.js"
+       }
+     ]
+   }
