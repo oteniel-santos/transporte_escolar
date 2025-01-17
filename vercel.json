@@ -1,6 +1,6 @@
 {
-    "versão": 2,
-    "compilações": [
+    "version": 2,
+    "builds": [
     {
     "src": "index.js",
     "usar": "@vercel/node"
