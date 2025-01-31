@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DEU CERTO</h1>
+
+    <script>
+
+
+
+      function cadastraUsuario (body) {
+    const options = {
+      method: 'POST',
+      body: Object.keys(body)
+        .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(body[k])}`)
+        .join('&')
+    }
+
+    return fetch('https://transporte-escolar-2025.vercel.app/save-data', options, { mode: 'no-cors' })
+      .then(T => T.json())
+  }
+
+  cadastraUsuario({ nome: 'Bruno', sobrenome: 'Carvalho de Araujo' })
+    .then(() => console.log('cadastrado'))
+    .catch(() => console.log('falha ao cadastrar'))
+    
+
+    </script>
+    
+</body>
+</html>
