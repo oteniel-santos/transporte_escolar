@@ -18,6 +18,12 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/cristalino', (req, res) => {
+    res.sendFile(path.join(__dirname, 'cristalino.html'));
+});
+
+
+
 const readFile = () => {
     const content = fs.readFileSync('./dados.json', 'utf-8');
     return JSON.parse(content);
