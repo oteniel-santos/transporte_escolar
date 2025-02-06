@@ -255,6 +255,10 @@ try {
     responsavel.alunos.forEach(aluno => {
 
      
+
+
+    text += encodeURIComponent(`*ID*: ${aluno.id}
+     `)
     text += encodeURIComponent(`*Nome*: ${aluno.nome}
      `)
     text += encodeURIComponent(`*Escola*: ${aluno.escola}
@@ -273,6 +277,8 @@ try {
      `)
 
     });
+
+    
 
     
     
