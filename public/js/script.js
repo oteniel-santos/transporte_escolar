@@ -398,7 +398,7 @@ const selecionaEscola = (idEscola) => {
       return AndreMaggi
       break;
 
-      case idEscola = 8:
+      case idEscola = 9:
       const Vazio = [""]
       return Vazio
       break;
